@@ -12,33 +12,33 @@ function memoize(fn) {
   };
 }
 
-function untilFindTheWay(i, j, n, m) {
+function findAllPaths(i, j, n, m) {
   if (i === n && j === m) {
     return 1;
   } else if (i > n || j > m) {
     return 0;
   } else {
-    return untilFindTheWay(i + 1, j, n, m) + untilFindTheWay(i, j + 1, n, m);
+    return findAllPaths(i + 1, j, n, m) + findAllPaths(i, j + 1, n, m);
   }
 }
 
-const memoizedUntilFindTheWay = memoize(function untilFindTheWay(i, j, n, m) {
+const memoizedFindAllPaths = memoize(function findAllPaths(i, j, n, m) {
   if (i === n && j === m) {
     return 1;
   } else if (i > n || j > m) {
     return 0;
   } else {
     return (
-      memoizedUntilFindTheWay(i + 1, j, n, m) +
-      memoizedUntilFindTheWay(i, j + 1, n, m)
+      memoizedFindAllPaths(i + 1, j, n, m) +
+      memoizedFindAllPaths(i, j + 1, n, m)
     );
   }
 });
 console.log(
   "The possible ways are (memoized): ",
-  memoizedUntilFindTheWay(15, 15, 30, 30)
+  memoizedFindAllPaths(15, 15, 30, 30)
 );
 console.log(
   "The possible ways are (not memoized): ",
-  untilFindTheWay(15, 15, 30, 30)
+  findAllPaths(15, 15, 30, 30)
 );
