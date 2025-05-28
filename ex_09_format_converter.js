@@ -12,16 +12,16 @@ function pairsToObject(pairs) {
 }
 console.log(pairsToObject(pairs));
 
-let obj2 = {
+let obj = {
   a: 1,
   b: 2,
 };
 
-function objectToPairs(obj2) {
-  const array2 = [];
-  for (const key in obj2) {
-    array2.push([key, obj2[key]]);
+function objectToPairs(obj) {
+  const array = [];
+  for (const key in obj) {
+    array.push([key, obj[key]]);
   }
-  return array2;
+  return array;
 }
-console.log(objectToPairs(obj2));
+console.log(objectToPairs(obj));
