@@ -136,4 +136,4 @@ dist
 .pnp.*
 
 # tempCodeRunner
-tempCodeRunnerFile.js
+.tempCodeRunnerFile.js
